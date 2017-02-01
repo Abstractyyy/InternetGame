@@ -13,6 +13,7 @@ namespace InternetGame
         SpriteBatch spriteBatch;
         private NetworkConnection _networkConnection;
         private InputManager inputManager;
+        SpriteFont font;
         private Color color;
 
         private Texture2D texture;
@@ -55,6 +56,7 @@ namespace InternetGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("player");
+            font = Content.Load<SpriteFont>("font");
             // TODO: use this.Content to load your game content here
         }
 
@@ -74,8 +76,6 @@ namespace InternetGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
 
             _networkConnection.Update();
             inputManager.Update(gameTime.ElapsedGameTime.Milliseconds);
@@ -99,10 +99,10 @@ namespace InternetGame
             {
                 foreach (var player in _networkConnection.Players)
                 {
+                    spriteBatch.DrawString(font, player.Name, new Vector2(player.XPosition, player.YPosition-5), Color.Black);
                     spriteBatch.Draw(texture, new Rectangle(player.XPosition, player.YPosition, 20, 20), Color.White);
                 }
             }
-            
             spriteBatch.End();
 
             base.Draw(gameTime);

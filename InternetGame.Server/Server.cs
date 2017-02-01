@@ -110,9 +110,13 @@ namespace InternetGame.Server
                     }
                             break;
                         case Keys.Right:
-                    if(player.XPosition <= 800-20)
-                            player.XPosition += 5;
+                    if (player.XPosition <= 800 - 20)
+                    {
+                        player.XPosition += 5;
+                    }
                             break;
+
+                        
                     }
             //
             SendPlayerPosition(player, inc);
