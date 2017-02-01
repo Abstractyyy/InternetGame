@@ -12,7 +12,9 @@ namespace InternetGame
 {
     class NetworkConnection
     {
+
         private NetClient client;
+
         public List<Player> Players { get; set; }
 
         public string Username { get; set; }
@@ -33,7 +35,7 @@ namespace InternetGame
             var outmsg = client.CreateMessage();                        
             outmsg.Write((byte)PacketType.Login);
             outmsg.Write(Username);
-            client.Connect("localhost", 1337, outmsg);
+            client.Connect("192.168.248.92", 1337, outmsg);
             return EstablishInfo();
         }
 
