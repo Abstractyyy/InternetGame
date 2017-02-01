@@ -104,6 +104,7 @@ namespace InternetGame
             }
         }
 
+
         private void ReadPlayer(NetIncomingMessage inc)
         {
             var player = new Player();
@@ -120,6 +121,7 @@ namespace InternetGame
             }
         }
 
+        //Här tas inputs emot från InputManager. Den skickar med att det är packettype.Input, vilken knapp det är, samt vem som gjorde det.
         public void SendInput(Keys key)
         {
             var outmessage = client.CreateMessage();

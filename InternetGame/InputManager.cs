@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace InternetGame
 {
+    //Denna klass skickar inputs till servern så att servern kan avgöra vad som ska göras med dem
     class InputManager
     {
         private NetworkConnection networkConnection;
@@ -24,9 +25,8 @@ namespace InternetGame
             CheckKeyState(Keys.Up, state);
             CheckKeyState(Keys.Left, state);
             CheckKeyState(Keys.Right, state);
-        
-
         }
+        //Om en key är nere så skickas det till serven via SendInput i NetworkConnection, en egen skapad klass.
         private void CheckKeyState(Keys key, KeyboardState state)
         {
             if(state.IsKeyDown(key))
