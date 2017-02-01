@@ -94,6 +94,7 @@ namespace InternetGame.Server
                     switch(key)
                     {
                         case Keys.Down:
+                    if(player.YPosition <= 480-20)
                             player.YPosition += 5;
                             break;
                         case Keys.Up:
@@ -109,6 +110,7 @@ namespace InternetGame.Server
                     }
                             break;
                         case Keys.Right:
+                    if(player.XPosition <= 800-20)
                             player.XPosition += 5;
                             break;
                     }
