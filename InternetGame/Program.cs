@@ -1,5 +1,8 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 namespace InternetGame
 {
 #if WINDOWS || LINUX
@@ -14,8 +17,9 @@ namespace InternetGame
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
-                game.Run();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ConnectionForm());
         }
     }
 #endif
