@@ -113,6 +113,9 @@ namespace InternetGame.Server
                     if(player.XPosition <= 800-20)
                             player.XPosition += 5;
                             break;
+                case Keys.Space:
+                    player.XPosition += 2;
+                    break;
                     }
             //
             SendPlayerPosition(player, inc);

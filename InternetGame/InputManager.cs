@@ -25,6 +25,7 @@ namespace InternetGame
             CheckKeyState(Keys.Up, state);
             CheckKeyState(Keys.Left, state);
             CheckKeyState(Keys.Right, state);
+            CheckKeyState(Keys.Space, state);
         }
         //Om en key är nere så skickas det till serven via SendInput i NetworkConnection, en egen skapad klass.
         private void CheckKeyState(Keys key, KeyboardState state)
