@@ -102,8 +102,6 @@ namespace InternetGame
                     spriteBatch.Draw(texture, new Rectangle(player.XPosition, player.YPosition, 20, 20), Color.White);
                 }
             }
-
-            
             
             spriteBatch.End();
 
