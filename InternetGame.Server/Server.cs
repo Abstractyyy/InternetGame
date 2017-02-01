@@ -94,16 +94,22 @@ namespace InternetGame.Server
                     switch(key)
                     {
                         case Keys.Down:
-                            player.YPosition += 1;
+                            player.YPosition += 5;
                             break;
                         case Keys.Up:
-                            player.YPosition -= 1;
+                    if (player.YPosition >= 0)
+                    {
+                        player.YPosition -= 5;
+                    }
                             break;
                         case Keys.Left:
-                            player.XPosition -= 1;
+                    if (player.XPosition >= 0)
+                    {
+                        player.XPosition -= 5;
+                    }
                             break;
                         case Keys.Right:
-                            player.XPosition += 1;
+                            player.XPosition += 5;
                             break;
                     }
             //
