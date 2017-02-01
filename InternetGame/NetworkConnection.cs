@@ -26,6 +26,7 @@ namespace InternetGame
             Players = new List<Player>();
         }
 
+        //Start är det som connectar till servern samt ser till att man får ett username, clienten startar, och skickar login info till servern
         public bool Start()
         {
             var random = new Random();
@@ -44,14 +45,16 @@ namespace InternetGame
             var time = DateTime.Now;
             NetIncomingMessage inc;
 
+
             while (true)
             {
                 if (DateTime.Now.Subtract(time).Seconds > 5)
                 {
                     return false;
                 }
+                //Om inte det finns ett meddelande att hämta så continue.
                 if ((inc = client.ReadMessage()) == null) continue;
-
+                
                 switch(inc.MessageType)
                 {
                     case NetIncomingMessageType.Data:
@@ -73,6 +76,7 @@ namespace InternetGame
             }
         }
 
+        //Tar emot positioner från servern för andra spelare.
         public void Update()
         {
             NetIncomingMessage inc;
@@ -104,7 +108,7 @@ namespace InternetGame
             }
         }
 
-
+        //Tar emot inc och läser alla properties för den spelaren
         private void ReadPlayer(NetIncomingMessage inc)
         {
             var player = new Player();

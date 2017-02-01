@@ -115,8 +115,9 @@ namespace InternetGame.Server
                         player.XPosition += 5;
                     }
                             break;
-
-                        
+                case Keys.Space:
+                    player.XPosition += 2;
+                    break;
                     }
             //
             SendPlayerPosition(player, inc);
