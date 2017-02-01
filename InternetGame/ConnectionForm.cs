@@ -23,5 +23,12 @@ namespace InternetGame
             NetworkConnection _connection = new NetworkConnection();
             Game1 tetris = new Game1();
         }
+
+        private void btnHostnConnect_Click(object sender, EventArgs e)
+        {
+            connection = textBox1.Text;
+            NetworkConnection _connection = new NetworkConnection();
+            Game1 game = new Game1();
+        }
     }
 }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Lidgren.Network;
 
-
 namespace InternetGame.Library
 {
     public class Player

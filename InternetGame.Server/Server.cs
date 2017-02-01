@@ -116,7 +116,8 @@ namespace InternetGame.Server
                     }
                             break;
                 case Keys.Space:
-                    player.XPosition += 2;
+                    player.XPosition = 0;
+                    player.YPosition = 0;
                     break;
                     }
             //

@@ -76,6 +76,10 @@
       <Project>{d437447b-471f-483c-ae29-2309d596be11}</Project>
       <Name>InternetGame.Library</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InternetGame.Server\InternetGame.Server.csproj">
+      <Project>{a7df4480-4ecb-49a9-9e4a-c3089674c71f}</Project>
+      <Name>InternetGame.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ConnectionForm.resx">

@@ -99,7 +99,7 @@ namespace InternetGame
             {
                 foreach (var player in _networkConnection.Players)
                 {
-                    spriteBatch.DrawString(font, player.Name, new Vector2(player.XPosition, player.YPosition-5), Color.Black);
+                    spriteBatch.DrawString(font, player.Name, new Vector2(player.XPosition, player.YPosition-20), Color.Black);
                     spriteBatch.Draw(texture, new Rectangle(player.XPosition, player.YPosition, 20, 20), Color.White);
                 }
             }
