@@ -7,7 +7,6 @@ using InternetGame.Library;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
 namespace InternetGame
 {
     class NetworkConnection
@@ -36,7 +35,7 @@ namespace InternetGame
             var outmsg = client.CreateMessage();                        
             outmsg.Write((byte)PacketType.Login);
             outmsg.Write(Username);
-            client.Connect("192.168.248.92", 1337, outmsg);
+            client.Connect("Localhost", 1337, outmsg);
             return EstablishInfo();
         }
 
